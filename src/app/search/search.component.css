@@ -1,0 +1,34 @@
+.search-button {
+  margin-top: 15px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.avatar img {
+  max-height: 50px;
+  width: auto;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.title {
+  display: inline-block;
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+ul.striped li:nth-child(odd) {
+  background-color: #e3f2fd;
+}
+
+.robo-list-item {
+  cursor: pointer;
+  outline-style: none;
+}

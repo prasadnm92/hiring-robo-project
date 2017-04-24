@@ -1,3 +1,29 @@
-<p>
-  search works!
-</p>
+<div class="container">
+  <div class="container-fluid margin-top">
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="input-group full-width">
+          <input type="text" [(ngModel)]="searchText" placeholder="Search name" class="form-control">
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <div (click)="sendSearch()" class="btn btn-primary">
+          <i class="fa fa-search fa-fw"></i> Search
+        </div>
+      </div>
+      <div class="col-xs-6"></div>
+    </div>
+  </div>
+
+  <div class="container-fluid margin-top">
+    <ul class="list-group striped">
+      <li *ngFor="let robo of searchResults" class="list-group-item avatar">
+        <span class="badge">{{robo.price | roboPrice}}</span>
+        <div [routerLink]="['/detail/', robo.robo_id]" class="robo-list-item">
+          <img [src]="robo.avatar" class="circle">
+          <h4 class="title">{{robo.name}}</h4>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

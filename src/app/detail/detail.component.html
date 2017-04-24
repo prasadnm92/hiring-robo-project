@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="container-fluid row margin-top">
+    <button [routerLink]="['/search']" class="btn btn-danger">
+      <i class="fa fa-arrow-left fa-fw"></i> New Search
+    </button>
+  </div>
+
+  <div *ngIf="roboDetails">
+    <div class="container-fluid row">
+      <div class="col-xs-12 col-md-4">
+        <img [src]="roboDetails.avatar" [alt]="roboDetails.name" [title]="roboDetails.name" class="full-img"/>
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <h2>{{roboDetails.name}}</h2>
+        <h4>Model: {{roboDetails.model}}</h4>
+        <h4>Price: {{roboDetails.price | roboPrice}}</h4>
+      </div>
+    </div>
+
+    <div class="panel panel-danger margin-top">
+      <div class="panel-heading">REVIEWS</div>
+
+      <ul class="list-group striped">
+        <li *ngFor="let review of reviews" class="list-group-item">
+          <span>
+              <span class="fa fa-star"></span>
+              <span *ngIf="review.rating>1"><span class="fa fa-star"></span></span>
+              <span *ngIf="review.rating<=1"><span class="fa fa-star-o"></span></span>
+              <span *ngIf="review.rating>2"><span class="fa fa-star"></span></span>
+              <span *ngIf="review.rating<=2"><span class="fa fa-star-o"></span></span>
+              <span *ngIf="review.rating>3"><span class="fa fa-star"></span></span>
+              <span *ngIf="review.rating<=3"><span class="fa fa-star-o"></span></span>
+              <span *ngIf="review.rating>4"><span class="fa fa-star"></span></span>
+              <span *ngIf="review.rating<=4"><span class="fa fa-star-o"></span></span>
+            </span>
+          <h5>
+            {{review.review}}
+          </h5>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

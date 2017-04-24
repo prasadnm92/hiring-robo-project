@@ -1,0 +1,8 @@
+.full-img {
+  width:100%;
+  height: auto;
+}
+
+ul.striped li:nth-child(even) {
+  background-color: #f2dede;
+}

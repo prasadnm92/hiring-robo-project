@@ -16,7 +16,8 @@ export class SearchComponent {
   searchText: string = ""; // You can two-way bind this to the textbox input for searches
 
   sendSearch() {
-    // bind this to the click event in your "search" button. Fetch
+    this.roboAssistantService.getAllRoboAssistants(this.searchText)
+    .then((res:any) => { this.searchResults = res; });
   }
 
 }
